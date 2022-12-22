@@ -1,8 +1,8 @@
 import 'package:account/pages/account_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
-import 'package:platform/feature.dart';
-import 'package:platform/feature_tab.dart';
+import 'package:feature_manager/feature.dart';
+import 'package:feature_manager/feature_tab.dart';
 
 class AccountFeature implements Feature {
   @override

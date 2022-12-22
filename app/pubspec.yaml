@@ -15,8 +15,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.2.9
 
-  platform:
-    path: ../shared/platform
+  feature_manager:
+    path: ../shared/feature_manager
+  data:
+    path: ../shared/data
   account:
     path: ../modules/account
   movie:

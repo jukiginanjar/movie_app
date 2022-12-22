@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:platform/feature.dart';
-import 'package:platform/feature_tab.dart';
+import 'package:feature_manager/feature.dart';
+import 'package:feature_manager/feature_tab.dart';
 import 'package:tv/pages/detail/tv_detail_controller.dart';
 import 'package:tv/pages/detail/tv_detail_page.dart';
 import 'package:tv/pages/tv/tv_controller.dart';

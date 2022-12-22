@@ -1,11 +1,12 @@
+import 'package:data/repositories/movie_repository.dart';
+import 'package:feature_manager/feature.dart';
+import 'package:feature_manager/feature_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie/pages/detail/movie_detail_controller.dart';
 import 'package:movie/pages/detail/movie_detail_page.dart';
 import 'package:movie/pages/movie/movie_controller.dart';
 import 'package:movie/pages/movie/movie_page.dart';
-import 'package:platform/feature.dart';
-import 'package:platform/feature_tab.dart';
 
 class MovieFeature implements Feature {
   @override
@@ -37,7 +38,7 @@ class MovieFeatureTab implements FeatureTab {
 class MovieFeatureTabPage implements FeatureTabPage {
   @override
   void dependencies() {
-    Get.lazyPut(() => MovieController());
+    Get.lazyPut(() => MovieController(MovieRepositoryImpl()));
   }
 
   @override

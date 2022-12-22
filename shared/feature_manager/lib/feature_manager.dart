@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:platform/feature.dart';
-import 'package:platform/feature_tab.dart';
+import 'package:feature_manager/feature.dart';
+import 'package:feature_manager/feature_tab.dart';
 
 class FeatureManager {
   FeatureManager._privateConstructor();

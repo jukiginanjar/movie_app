@@ -1,8 +1,8 @@
 import 'package:app/pages/main_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:platform/feature_manager.dart';
-import 'package:platform/feature_tab.dart';
+import 'package:feature_manager/feature_manager.dart';
+import 'package:feature_manager/feature_tab.dart';
 
 class MainPage extends GetView<MainController> {
   const MainPage({super.key});

@@ -4,7 +4,7 @@ import 'package:app/pages/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie/movie_feature.dart';
-import 'package:platform/feature_manager.dart';
+import 'package:feature_manager/feature_manager.dart';
 import 'package:tv/tv_feature.dart';
 
 void main() {

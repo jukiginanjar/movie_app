@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:platform/feature_manager.dart';
+import 'package:feature_manager/feature_manager.dart';
 
 class MainController extends GetxController
     with GetSingleTickerProviderStateMixin {
