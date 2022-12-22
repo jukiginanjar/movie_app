@@ -1,0 +1,27 @@
+name: movie_app
+
+packages:
+  - 'modules/**'
+  - 'platform'
+ignore:
+  - '.*/**'
+
+scripts:
+  analyze:
+    exec: dart analyze .
+
+  generate:splash_screen:
+    run: |
+      cd app && \
+      fvm flutter pub run flutter_native_splash:create
+    description: |
+      Generates splash screeen resources for iOS and Android.
+      Check configuration inside `app/flutter_native_splash.yaml`
+
+  generate:launcher_icons:
+    run: |
+      cd app && \
+      fvm flutter pub run flutter_launcher_icons:main
+    description: |
+      Generates launcher icons for web, iOS and Android.
+      Check configuration inside `app/flutter_launcher_icons.yaml`

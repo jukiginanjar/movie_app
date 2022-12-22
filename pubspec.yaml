@@ -1,0 +1,13 @@
+name: movie_app
+description: App to browse your favorite movies & tvs
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+  flutter: ">=3.3.0"
+
+dev_dependencies:
+  analyzer: ^5.1.0
+  flutter_lints: ^2.0.1
+  yaml: 3.1.1
