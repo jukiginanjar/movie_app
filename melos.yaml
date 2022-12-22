@@ -2,7 +2,7 @@ name: movie_app
 
 packages:
   - 'modules/**'
-  - 'platform'
+  - 'shared/**'
 ignore:
   - '.*/**'
 

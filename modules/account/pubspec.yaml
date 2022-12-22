@@ -12,9 +12,8 @@ dependencies:
 
   get: ^4.6.5
   cupertino_icons: ^1.0.2
-
   platform:
-    path: ../../platform
+    path: ../../shared/platform
 
 dev_dependencies:
   flutter_test:

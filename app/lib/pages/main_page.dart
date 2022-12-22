@@ -23,6 +23,7 @@ class MainPage extends GetView<MainController> {
           child: TabBar(
             labelPadding: const EdgeInsets.all(12),
             labelColor: Colors.red,
+            indicatorColor: Colors.transparent,
             unselectedLabelColor: Colors.grey,
             tabs: List.generate(
               FeatureManager.featureTabs.length,
