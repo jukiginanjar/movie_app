@@ -3,7 +3,7 @@ import 'package:data/models/tv_model.dart';
 import 'package:data/sources/movie_db_source.dart';
 
 abstract class TvRepository {
-  Future<List<TvModel>> getOnTheAirTvs();
+  Future<List<TvModel>> getOtaTvs();
 
   Future<List<TvModel>> getPopularTvs();
 }
@@ -12,7 +12,7 @@ class TvRepositoryImpl implements TvRepository {
   final _source = MovieDbSource();
 
   @override
-  Future<List<TvModel>> getOnTheAirTvs() {
+  Future<List<TvModel>> getOtaTvs() {
     return _source.getOnTheAirTvs().then((value) => _mapToModels(value));
   }
 

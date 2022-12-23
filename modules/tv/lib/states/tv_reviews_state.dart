@@ -2,16 +2,15 @@ import 'package:data/models/review_model.dart';
 import 'package:data/repositories/review_repository.dart';
 import 'package:get/get.dart';
 
-class MovieReviewsState extends GetxController
-    with StateMixin<List<ReviewModel>> {
+class TvReviewsState extends GetxController with StateMixin<List<ReviewModel>> {
   final ReviewRepository reviewRepository;
 
-  MovieReviewsState(this.reviewRepository);
+  TvReviewsState(this.reviewRepository);
 
-  void getData(int movieId) async {
+  void getData(int tvId) async {
     try {
       change(null, status: RxStatus.loading());
-      final result = await reviewRepository.getMovieReviews(movieId);
+      final result = await reviewRepository.getTvReviews(tvId);
       if (result.isEmpty) {
         change(result, status: RxStatus.empty());
       } else {

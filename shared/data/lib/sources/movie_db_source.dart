@@ -28,7 +28,7 @@ class MovieDbSource {
   }
 
   Future<dynamic> getPopularTvs() {
-    return _get(path: '/tv/popula', queryParameters: {'page': 1});
+    return _get(path: '/tv/popular', queryParameters: {'page': 1});
   }
 
   Future<dynamic> getTvReviews(int tvId) {

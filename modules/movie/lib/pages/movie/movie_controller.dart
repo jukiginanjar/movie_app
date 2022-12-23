@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 class MovieController extends GetxController
     with GetSingleTickerProviderStateMixin {
-  MovieController();
 
   late final TabController tabController;
 

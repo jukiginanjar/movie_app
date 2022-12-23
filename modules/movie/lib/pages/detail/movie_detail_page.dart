@@ -19,7 +19,10 @@ class MovieDetailPage extends GetView<MovieDetailController> {
               children: [
                 AspectRatio(
                   aspectRatio: 0.66,
-                  child: CachedNetworkImage(imageUrl: movie.thumbnailUrl),
+                  child: CachedNetworkImage(
+                    imageUrl: movie.thumbnailUrl,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Text(movie.title),

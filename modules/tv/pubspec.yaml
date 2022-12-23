@@ -12,8 +12,11 @@ dependencies:
 
   get: ^4.6.5
   cupertino_icons: ^1.0.2
+  cached_network_image: ^3.2.3
   feature_manager:
     path: ../../shared/feature_manager
+  data:
+    path: ../../shared/data
 
 dev_dependencies:
   flutter_test:
