@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie/pages/movie/movie_controller.dart';
+import 'package:movie/pages/now_playing/now_playing_movie_page.dart';
 
 class MoviePage extends GetView<MovieController> {
   const MoviePage({super.key});
@@ -22,7 +23,7 @@ class MoviePage extends GetView<MovieController> {
       body: TabBarView(
         controller: controller.tabController,
         children: [
-          Container(),
+          const NowPlayingMoviePage(),
           Container(),
           Container(),
         ],
