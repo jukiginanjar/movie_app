@@ -48,11 +48,10 @@ class MovieFeatureTab implements FeatureTab {
 class MovieFeatureTabPage implements FeatureTabPage {
   @override
   void dependencies() {
-    Get.lazyPut(() => MovieController(
-          NowPlayingState(MovieRepositoryImpl()),
-          UpcomingMovieState(MovieRepositoryImpl()),
-          PopularMovieState(MovieRepositoryImpl()),
-        ));
+    Get.lazyPut(() => NowPlayingState(MovieRepositoryImpl()));
+    Get.lazyPut(() => UpcomingMovieState(MovieRepositoryImpl()));
+    Get.lazyPut(() => PopularMovieState(MovieRepositoryImpl()));
+    Get.lazyPut(() => MovieController());
   }
 
   @override

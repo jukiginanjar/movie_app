@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie/states/now_playing_state.dart';
 
-class NowPlayingMoviePage extends StatelessWidget {
-  const NowPlayingMoviePage(this.state, {super.key});
-
-  final NowPlayingState state;
+class NowPlayingMoviePage extends GetView<NowPlayingState> {
+  const NowPlayingMoviePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return state.obx(
+    return controller.obx(
       (state) => GridView.builder(
         padding: const EdgeInsets.all(12),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

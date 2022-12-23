@@ -24,10 +24,10 @@ class MoviePage extends GetView<MovieController> {
       ),
       body: TabBarView(
         controller: controller.tabController,
-        children: [
-          NowPlayingMoviePage(controller.nowPlayingState),
-          UpcomingMoviePage(controller.upcomingMovieState),
-          PopularMoviePage(controller.popularMovieState),
+        children: const [
+          NowPlayingMoviePage(),
+          UpcomingMoviePage(),
+          PopularMoviePage(),
         ],
       ),
     );

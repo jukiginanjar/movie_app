@@ -3,15 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie/states/upcoming_movie_state.dart';
 
-class UpcomingMoviePage extends StatelessWidget {
-  const UpcomingMoviePage(this.state, {super.key});
-
-  final UpcomingMovieState state;
+class UpcomingMoviePage extends GetView<UpcomingMovieState> {
+  const UpcomingMoviePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return state.obx(
-          (state) => GridView.builder(
+    return controller.obx(
+      (state) => GridView.builder(
         padding: const EdgeInsets.all(12),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,

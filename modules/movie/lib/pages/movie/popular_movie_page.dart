@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie/states/popular_movie_state.dart';
 
-class PopularMoviePage extends StatelessWidget {
-  const PopularMoviePage(this.state, {super.key});
-
-  final PopularMovieState state;
+class PopularMoviePage extends GetView<PopularMovieState> {
+  const PopularMoviePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return state.obx(
+    return controller.obx(
       (state) => GridView.builder(
         padding: const EdgeInsets.all(12),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
