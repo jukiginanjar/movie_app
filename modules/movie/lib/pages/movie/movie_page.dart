@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie/pages/movie/movie_controller.dart';
-import 'package:movie/pages/now_playing/now_playing_movie_page.dart';
+import 'package:movie/pages/movie/now_playing_movie_page.dart';
+import 'package:movie/pages/movie/popular_movie_page.dart';
+import 'package:movie/pages/movie/upcoming_movie_page.dart';
 
 class MoviePage extends GetView<MovieController> {
   const MoviePage({super.key});
@@ -23,9 +25,9 @@ class MoviePage extends GetView<MovieController> {
       body: TabBarView(
         controller: controller.tabController,
         children: [
-          const NowPlayingMoviePage(),
-          Container(),
-          Container(),
+          NowPlayingMoviePage(controller.nowPlayingState),
+          UpcomingMoviePage(controller.upcomingMovieState),
+          PopularMoviePage(controller.popularMovieState),
         ],
       ),
     );

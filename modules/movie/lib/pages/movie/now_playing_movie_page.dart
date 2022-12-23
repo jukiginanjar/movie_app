@@ -1,15 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:movie/pages/now_playing/now_playing_movie_controller.dart';
+import 'package:movie/states/now_playing_state.dart';
 
-class NowPlayingMoviePage extends GetView<NowPlayingMovieController> {
-  const NowPlayingMoviePage({super.key});
+class NowPlayingMoviePage extends StatelessWidget {
+  const NowPlayingMoviePage(this.state, {super.key});
+
+  final NowPlayingState state;
 
   @override
   Widget build(BuildContext context) {
-    return controller.obx(
+    return state.obx(
       (state) => GridView.builder(
         padding: const EdgeInsets.all(12),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

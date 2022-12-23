@@ -9,8 +9,10 @@ import 'package:movie/pages/detail/movie_detail_controller.dart';
 import 'package:movie/pages/detail/movie_detail_page.dart';
 import 'package:movie/pages/movie/movie_controller.dart';
 import 'package:movie/pages/movie/movie_page.dart';
-import 'package:movie/pages/now_playing/now_playing_movie_controller.dart';
+import 'package:movie/states/now_playing_state.dart';
 import 'package:movie/states/movie_reviews_state.dart';
+import 'package:movie/states/popular_movie_state.dart';
+import 'package:movie/states/upcoming_movie_state.dart';
 
 class MovieFeature implements Feature {
   @override
@@ -20,9 +22,9 @@ class MovieFeature implements Feature {
           page: () => const MovieDetailPage(),
           binding: BindingsBuilder(() {
             MovieModel model = Get.arguments;
-            ReviewRepository reviewRepo = ReviewRepositoryImpl();
             Get.lazyPut(
-              () => MovieDetailController(model, MovieReviewsState(reviewRepo)),
+              () => MovieDetailController(
+                  model, MovieReviewsState(ReviewRepositoryImpl())),
             );
           }),
         )
@@ -46,8 +48,11 @@ class MovieFeatureTab implements FeatureTab {
 class MovieFeatureTabPage implements FeatureTabPage {
   @override
   void dependencies() {
-    Get.lazyPut(() => NowPlayingMovieController(MovieRepositoryImpl()));
-    Get.lazyPut(() => MovieController());
+    Get.lazyPut(() => MovieController(
+          NowPlayingState(MovieRepositoryImpl()),
+          UpcomingMovieState(MovieRepositoryImpl()),
+          PopularMovieState(MovieRepositoryImpl()),
+        ));
   }
 
   @override
