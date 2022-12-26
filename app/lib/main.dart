@@ -28,9 +28,7 @@ class MovieApp extends StatelessWidget {
       name: _main,
       page: () => const MainPage(),
       binding: BindingsBuilder(() {
-        for (var element in FeatureManager.featureTabs) {
-          element.page.dependencies();
-        }
+        _registerFeatureTabDependencies();
         Get.lazyPut(() => MainController());
       }),
     );
@@ -38,10 +36,14 @@ class MovieApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Movie App',
       initialRoute: _main,
-      theme: ThemeData.from(
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.amber),
-      ),
+      theme: ThemeData.dark(),
       getPages: [main] + FeatureManager.routes,
     );
+  }
+
+  void _registerFeatureTabDependencies() {
+    for (var element in FeatureManager.featureTabs) {
+      element.page.dependencies();
+    }
   }
 }
