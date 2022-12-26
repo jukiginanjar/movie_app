@@ -24,20 +24,22 @@ class MovieApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final main = GetPage(
+    return GetMaterialApp(
+      title: 'Movie App',
+      initialRoute: _main,
+      theme: ThemeData.dark(),
+      getPages: [_mainRoute] + FeatureManager.routes,
+    );
+  }
+
+  GetPage<dynamic> get _mainRoute {
+    return GetPage(
       name: _main,
       page: () => const MainPage(),
       binding: BindingsBuilder(() {
         _registerFeatureTabDependencies();
         Get.lazyPut(() => MainController());
       }),
-    );
-
-    return GetMaterialApp(
-      title: 'Movie App',
-      initialRoute: _main,
-      theme: ThemeData.dark(),
-      getPages: [main] + FeatureManager.routes,
     );
   }
 
